@@ -24,7 +24,6 @@ const LatestBuildsStatus = ({className}) => {
 };
 
 const StyledLatestBuildsStatus = styled(LatestBuildsStatus)`
-  margin-top: 10px;
   margin-left: 10px;
 `;
 
