@@ -33,7 +33,6 @@ const getAverageDurationData = ({labels, averageDurations}) => {
 };
 
 const AverageDuration = ({className, data}) => {
-  console.log(data)
   return (
     <div className={className}>
       <Bar data={getAverageDurationData(data)} width={40} height={20} />

@@ -1,24 +1,18 @@
-import {useState, useEffect} from 'react';
-import DailyBuilds from './DailyBuilds';
-import AverageDuration from './AverageDuration';
+import styled from 'styled-components';
+import DailyGraphs from './DailyGraphs';
+import LatestBuilds from './LatestBuilds';
 
-const Build = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/build/perDayStats')
-      .then((res) => res.json())
-      .then((data) => setData(() => data));
-  }, []);
-
-  return data ? (
-    <div>
-      <DailyBuilds data={data} />
-      <AverageDuration data={data} />
+const Build = ({className}) => {
+  return (
+    <div className={className}>
+      <DailyGraphs />
+      <LatestBuilds />
     </div>
-  ) : (
-    <p>Loading...</p>
   );
 };
 
-export default Build;
+const StyledBuild = styled(Build)`
+  display: flex;
+`;
+
+export default StyledBuild;
